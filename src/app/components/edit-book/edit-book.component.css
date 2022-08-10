@@ -1,0 +1,90 @@
+.edit-book-form {
+  margin-top: 5px;
+  border: black 1px solid;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 80px auto 80px;
+  grid-template-areas:
+    "top top"
+    "left right"
+    "buttons buttons";
+  justify-items: auto;
+}
+
+
+.top {
+  border-bottom: gray 1px solid;
+  grid-area: top;
+  justify-self: auto;
+  margin: 10px;
+}
+
+h2 {
+  display: flex;
+  margin-bottom: 0;
+}
+
+.left {
+  grid-area: left;
+  justify-content: center;
+}
+
+.right {
+  grid-area: right;
+}
+
+.buttons {
+  grid-area: buttons;
+  align-self: center;
+  justify-self: center;
+
+}
+
+button:first-child {
+  background-color: lightblue;
+}
+
+button:last-child {
+  background-color: yellow;
+}
+
+button {
+  margin: 5px;
+  width: 80px;
+}
+
+.left div {
+  height: 40px;
+  text-align: center;
+}
+
+textarea {
+  vertical-align: middle;
+  top: 0;
+  left: 0;
+  right: 0; /* <= */
+  height: 90%;
+  width: 80%;
+}
+
+.right span {
+  margin-left: 20px;
+  vertical-align: top;
+  width: 100px;
+  margin-right: 15px;
+}
+
+div input {
+  margin-left: 15px;
+  width: 200px;
+}
+
+.left div span {
+  width: 100px;
+  margin-right: 15px;
+}
+
+div p {
+  color: red;
+  margin-top: 0px;
+}

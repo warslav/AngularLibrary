@@ -1,0 +1,47 @@
+<form (ngSubmit)="submit()" [formGroup]="form" class="edit-book-form">
+  <div class="top">
+    <h2>{{AddOrEdit}} book</h2>
+  </div>
+  <div class="left">
+    <div>
+      <span>Title</span>
+      <input formControlName="title" placeholder="Book name" type="text">
+      <p *ngIf="title.errors?.minlength && title.touched">Please fill name field
+        width min length. Now {{ title.value.length }}</p>
+    </div>
+    <div>
+      <span>Cover</span>
+      <input formControlName="cover" placeholder="Image" type="text">
+      <p *ngIf="cover.errors?.minlength && cover.touched">Please fill description
+        field width min length. Now {{ cover.value.length }}</p>
+    </div>
+
+    <div>
+      <span>Genre</span>
+      <input formControlName="genre" placeholder="Genre" type="text">
+      <p *ngIf="genre.errors?.minlength && genre.touched">Please fill genre field
+        width min length. Now {{ genre.value.length }}</p>
+    </div>
+
+    <div>
+      <span>Author</span>
+      <input formControlName="author" placeholder="Author" type="text">
+      <p *ngIf="author.errors?.minlength && author.touched">Please fill author
+        field
+        width min length. Now {{ author.value.length }}</p>
+    </div>
+  </div>
+
+  <div class="right">
+    <span>Content</span>
+    <textarea formControlName="content" placeholder="Content" type="text"></textarea>
+    <p *ngIf="content.errors?.minlength && content.touched">Please fill content
+      field
+      width min length. Now {{ content.value.length }}</p>
+  </div>
+  <div class="buttons">
+    <button type="submit">{{AddOrEdit}} button</button>
+    <button (click)="onCancel()">Clear</button>
+  </div>
+
+</form>
