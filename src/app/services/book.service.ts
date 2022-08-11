@@ -12,12 +12,12 @@ export class BookService {
   }
 
   getBooks(): Observable<IBook[]> {
-    return of(Books);
+    return of(Books.sort((a, b) => (a.id > b.id) ? 1 : ((b.id < a.id) ? -1 : 0)));
   }
 
   getRecomendedBooks(): Observable<IBook[]> {
     // @ts-ignore
-    return of(Books.slice().sort((a, b) => (a.rating > b.rating) ? 1 : ((b.rating > a.rating) ? -1 : 0)));
+    return of(Books.slice().sort((a, b) => (a.rating > b.rating) ? -1 : ((b.rating > a.rating) ? 1 : 0)));
   }
 
   getBook(id: number): Observable<IBook | undefined> {

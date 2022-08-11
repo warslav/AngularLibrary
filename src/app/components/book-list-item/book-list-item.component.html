@@ -1,0 +1,18 @@
+<div *ngIf="book" class="wrapper">
+  <img alt="img" src="{{book.cover}}"/>
+  <div class="book-info">
+    <h3>{{book.title}}</h3>
+    <div class="book-details">
+      <p>Rating: {{book.rating}}</p>
+      <p>Reviews: {{book.reviewNumber}}</p>
+    </div>
+  </div>
+  <div class="item-buttons">
+    <button (click)="openView()">
+      👁
+    </button>
+    <button routerLink="/{{book.id}}">
+      ✏️
+    </button>
+  </div>
+</div>

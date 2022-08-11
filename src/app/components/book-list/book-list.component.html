@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <div class="box">
+    <input checked="checked" id="box1" name="box" type="radio">
+    <label for="box1">All</label>
+    <div class="content">
+      <app-book-list-item *ngFor="let book of allBooks | async;" [book]="book"></app-book-list-item>
+    </div>
+    <input id="box2" name="box" type="radio">
+    <label for="box2">Recommended</label>
+    <div class="content">
+      <app-book-list-item *ngFor="let book of recomendedBooks | async" [book]="book"></app-book-list-item>
+    </div>
+  </div>
+</div>
